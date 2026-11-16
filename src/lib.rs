@@ -94,8 +94,8 @@ fn target_triple(os: Os, architecture: Architecture) -> Result<&'static str, Str
              Open an issue at {ISSUES_PAGE} if you need this platform.",
             os_label(os),
             architecture_label(architecture),
-            os_label(os),
             architecture_label(architecture),
+            os_label(os),
         )),
     }
 }

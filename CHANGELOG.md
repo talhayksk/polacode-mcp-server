@@ -5,6 +5,17 @@ All notable changes to this extension are documented in this file.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.1] - 2026-11-16
+
+### Changed
+
+- Installs `polacode-mcp` **0.2.0** instead of 0.1.0: `MCP_VERSION` now points at
+  the `mcp-v0.2.0` release, so the first start after the update downloads that
+  binary into a new `polacode-mcp-0.2.0/` cache directory. The release publishes
+  the same five assets under the same names.
+- The same binary also gained a CLI (`polacode-mcp card`), which this extension
+  does not use; see the server repository.
+
 ## [0.1.0] - 2026-11-16
 
 ### Added

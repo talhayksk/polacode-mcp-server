@@ -65,6 +65,12 @@ git clone https://github.com/talhayksk/polacode-mcp-server.git
 The first start downloads about 250 KB and takes a few seconds. Later starts
 reuse the cached binary.
 
+This extension installs `polacode-mcp` 0.2.0 and only uses its MCP server mode.
+The same binary also has a `card` CLI, for example `polacode-mcp card --clipboard`,
+which renders a card with no model in the loop; the extension does not use it, but
+you can run the downloaded binary yourself — see
+<https://github.com/talhayksk/zedpolacode>.
+
 ## How the download works
 
 The URL is built from two constants in `src/lib.rs`:

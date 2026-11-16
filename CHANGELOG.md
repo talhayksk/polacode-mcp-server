@@ -5,6 +5,18 @@ All notable changes to this extension are documented in this file.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.2] - 2026-11-16
+
+### Changed
+
+- Installs `polacode-mcp` **0.2.1** instead of 0.2.0: `MCP_VERSION` now points at
+  the `mcp-v0.2.1` release, so the first start after the update downloads that
+  binary into a new `polacode-mcp-0.2.1/` cache directory. The release publishes
+  the same five assets under the same names, and the card output is unchanged.
+- 0.2.1 fixes two defects in the CLI of the same binary, which this extension
+  does not use: `card --help` printed an unknown-option error, and a second
+  `--open` snapshot failed while the image viewer still held the first PNG.
+
 ## [0.1.1] - 2026-11-16
 
 ### Changed

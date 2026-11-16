@@ -1,6 +1,6 @@
 id = "polacode-mcp-server"
 name = "Polacode MCP Server"
-version = "0.1.1"
+version = "0.1.2"
 schema_version = 1
 authors = ["Talha Yüksek <talha.yuksek@hotmail.com>"]
 description = "Polacode code snapshots as an MCP server: one `snapshot` tool that renders a file or line range into a PNG code card."

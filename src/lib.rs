@@ -14,7 +14,7 @@ use zed_extension_api::{self as zed, Architecture, DownloadedFileType, Os};
 /// This constant is the only place the version appears: it builds the download
 /// URL and the version-scoped cache directory, so bumping it installs the next
 /// release and cannot accidentally reuse the previous binary.
-const MCP_VERSION: &str = "0.2.0";
+const MCP_VERSION: &str = "0.2.1";
 
 /// GitHub repository (`owner/name`) that publishes the `polacode-mcp` release assets.
 const SOURCE_REPO: &str = "talhayksk/zedpolacode";
@@ -335,7 +335,7 @@ mod tests {
     fn builds_the_release_url_from_the_version_and_triple() {
         assert_eq!(
             download_url("x86_64-pc-windows-msvc"),
-            "https://github.com/talhayksk/zedpolacode/releases/download/mcp-v0.2.0/polacode-mcp-x86_64-pc-windows-msvc.zip"
+            "https://github.com/talhayksk/zedpolacode/releases/download/mcp-v0.2.1/polacode-mcp-x86_64-pc-windows-msvc.zip"
         );
         for triple in RELEASE_TRIPLES {
             let url = download_url(triple);
@@ -355,18 +355,18 @@ mod tests {
         for triple in RELEASE_TRIPLES {
             let dir = cache_dir(triple);
             assert_eq!(dir, format!("polacode-mcp-{MCP_VERSION}/{triple}"));
-            assert!(dir.starts_with("polacode-mcp-0.2.0/"));
+            assert!(dir.starts_with("polacode-mcp-0.2.1/"));
             assert!(dir.ends_with(triple));
         }
     }
 
     /// Pins the server release this extension ships.
     ///
-    /// Every platform the extension supports must resolve to the `mcp-v0.2.0`
-    /// tag and to a cache directory owned by `0.2.0`, so a missed constant
+    /// Every platform the extension supports must resolve to the `mcp-v0.2.1`
+    /// tag and to a cache directory owned by `0.2.1`, so a missed constant
     /// cannot download the previous release or silently reuse its binary.
     #[test]
-    fn every_supported_platform_downloads_mcp_v_0_2_0_into_a_0_2_0_cache_directory() {
+    fn every_supported_platform_downloads_mcp_v_0_2_1_into_a_0_2_1_cache_directory() {
         let platforms = [
             (Os::Windows, Architecture::X8664),
             (Os::Mac, Architecture::X8664),
@@ -379,14 +379,14 @@ mod tests {
             assert_eq!(
                 download_url(triple),
                 format!(
-                    "https://github.com/talhayksk/zedpolacode/releases/download/mcp-v0.2.0/polacode-mcp-{triple}.zip"
+                    "https://github.com/talhayksk/zedpolacode/releases/download/mcp-v0.2.1/polacode-mcp-{triple}.zip"
                 ),
                 "{os:?}/{architecture:?}"
             );
 
             let dir = cache_dir(triple);
             assert!(
-                dir.starts_with("polacode-mcp-0.2.0/"),
+                dir.starts_with("polacode-mcp-0.2.1/"),
                 "{os:?}/{architecture:?} would reuse another server version's cache: {dir}"
             );
             assert!(dir.ends_with(triple), "{os:?}/{architecture:?}: {dir}");

@@ -29,9 +29,9 @@ the themes and the MCP protocol live in the server, not here:
   executable if auto-detection fails.
 - Linux: the published binaries are built on Ubuntu 22.04 and need glibc 2.35 or
   newer (Debian 12, Ubuntu 22.04+ and their derivatives).
-- macOS: the published binaries are not signed or notarised. Zed's own download
-  does not set the quarantine attribute, so Gatekeeper does not block them; a
-  copy downloaded through a browser might be.
+- macOS: the published binaries are not signed or notarised. Zed writes the file itself rather
+  than going through a browser, which normally avoids the quarantine attribute that triggers
+  Gatekeeper; a copy downloaded through a browser may be blocked.
 
 Supported platforms and the asset each one downloads:
 

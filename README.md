@@ -1,3 +1,5 @@
+[![Zed Polacode MCP server](https://mcprush.com/badge/zed-polacode-mcp/card.svg)](https://mcprush.com/to/zed-polacode-mcp?ref=badge)
+
 # polacode-mcp-server
 
 A thin [Zed](https://zed.dev) extension that makes the `polacode-mcp` MCP server
